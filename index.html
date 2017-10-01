@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap to demonstrate pop ups</title>
+  <meta charset="utf-8">
+  <!-- link to bootsrap and Jquery libraries -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+<!-- start of body -->
+<body>
+<!-- main div -->
+<div class="container">
+  <h3>Assignment 9.1</h3>
+  <br/><br/>
+  <!-- pop up buttons -->
+  
+    <button id="first" class="btn btn-primary" data-toggle="popover" data-placement="top"  data-content="Default popover" title="Normal Popup">Popover</button>
+    <button id="another" class="btn btn-success" data-toggle="popover" data-placement="top"  data-content="Another popover" title="Another Normal Popup">Another Popover</button>
+    <button id="large" class="btn btn-info" data-toggle="popover" data-placement="top"  data-content="A Large popover to demonstrate max-width of the Bootstrap" title="Large pop up with max width">Large Popover</button>
+    <button id="last" class="btn btn-warning" data-toggle="popover" data-placement="top"  data-content="The Last popover" title="Final Popup">Last Popover</button>
+  <blockquote><p><b>Note:</b> Click on the buttons to display the popover.</p></blockquote>
+</div>
+<!-- Jquery to initialise the popover function and to set max width to the large pop up -->
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+var p=$('#large').popover();
+p.on("show.bs.popover", function(e){
+p.data("bs.popover").tip().css({"max-width": "300px","height":"90px","word-wrap":"break-word"});
+});
+
+});
+</script>
+<!-- end of body -->
+</body>
+</html>
